@@ -21,7 +21,7 @@ namespace E_voting.Models.Model
 
         public string MobileNo { get; set; }
         
-        [DisplayName("deneme açıklama")]
+        //[DisplayName("deneme açıklama")]
         public string Email { get; set; }
 
         [Required, StringLength(100, ErrorMessage = "Can be up to 100 characters.")]

@@ -319,7 +319,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" href="widgets.html">
+                        <a class="" href="/Voter/Index/">
                             <i class="icon_genius"></i>
                             <span>Voters</span>
                         </a>
@@ -337,7 +337,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" href="widgets.html">
+                        <a class="" href="/Positions/Index/">
                             <i class="icon_documents_alt"></i>
                             <span>Position</span>
                         </a>
@@ -412,7 +412,12 @@
         </aside>
         <!--sidebar end-->
         <!--main content start-->
-        @RenderBody()
+        <section id="main-content">
+            <section class="wrapper">
+                @RenderBody()
+            </section>
+        </section>
+       
 
         
         <!--main content end-->
@@ -434,7 +439,7 @@
     <script src="/Content/AdminLayout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="/Content/AdminLayout/js/owl.carousel.js"></script>
     <!-- jQuery full calendar -->
-    <
+    @*<*@
     <script src="/Content/AdminLayout/js/fullcalendar.min.js"></script>
     <!-- Full Google Calendar - Calendar -->
     <script src="/Content/AdminLayout/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
