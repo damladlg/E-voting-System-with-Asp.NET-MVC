@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace E_voting.Models.Model
         [Required, StringLength(50, ErrorMessage = "Can be up to 50 characters.")]
         public string Name { get; set; }
 
-        public int TC { get; set; }
+        public string TC { get; set; }
 
         [Required, StringLength(50, ErrorMessage = "Can be up to 50 characters.")]
         public string City { get; set; }
@@ -26,6 +27,7 @@ namespace E_voting.Models.Model
         public string Email { get; set; }
 
         [Required, StringLength(250, ErrorMessage = "Can be up to 250 characters.")]
+        [DisplayName("Photo")]
         public string PhotoPath { get; set; }
 
         public ICollection<VoteCastingInfo> VoteCastingInfos { get; set; }
