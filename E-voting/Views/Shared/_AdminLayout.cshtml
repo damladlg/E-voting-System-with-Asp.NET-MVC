@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    if(Session["adminid"]==null)
+    {
+        Response.Redirect("/Admin/Login/");
+    }
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -283,7 +290,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="~/Content/AdminLayout/img/adminSmall2.png">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username">@Session["email"]</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -298,7 +305,7 @@
                                 <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
                             </li>
                             <li>
-                                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="/Admin/Logout/"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>

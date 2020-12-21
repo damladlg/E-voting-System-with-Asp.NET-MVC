@@ -975,6 +975,7 @@
     <Content Include="Views\Candidate\Index.cshtml" />
     <Content Include="Views\CandidatePosition\Index.cshtml" />
     <Content Include="Views\VoteCastingInfo\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
