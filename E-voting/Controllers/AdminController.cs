@@ -31,11 +31,9 @@ namespace E_voting.Controllers
                 Session["adminid"] = login.AdminId;
                 Session["email"] = login.Email;
                 return RedirectToAction("Index", "Admin");
-
             }
             ViewBag.Uyari = "Wrong password or name";
             return View(admin);
-
         }
         public ActionResult Logout()
         {

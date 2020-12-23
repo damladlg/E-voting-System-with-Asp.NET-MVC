@@ -31,5 +31,7 @@ namespace E_voting.Models.Model
         public string City { get; set; }
 
         public ICollection<VoteCastingInfo> VoteCastingInfos { get; set; }
+
+        public string Authority { get; set; }
     }
 }
