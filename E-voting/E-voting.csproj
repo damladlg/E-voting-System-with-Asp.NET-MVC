@@ -934,6 +934,7 @@
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\CandidatePositionController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\VoteCastingInfoController.cs" />
     <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Controllers\VoterController.cs" />
@@ -946,6 +947,7 @@
     <Compile Include="Models\Model\Candidate.cs" />
     <Compile Include="Models\Model\CandidatePosition.cs" />
     <Compile Include="Models\Model\Position.cs" />
+    <Compile Include="Models\Model\Slider.cs" />
     <Compile Include="Models\Model\VoteCastingInfo.cs" />
     <Compile Include="Models\Model\Voter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -976,6 +978,11 @@
     <Content Include="Views\CandidatePosition\Index.cshtml" />
     <Content Include="Views\VoteCastingInfo\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Slider\Create.cshtml" />
+    <Content Include="Views\Slider\Delete.cshtml" />
+    <Content Include="Views\Slider\Details.cshtml" />
+    <Content Include="Views\Slider\Edit.cshtml" />
+    <Content Include="Views\Slider\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -986,6 +993,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Candidate\" />
+    <Folder Include="Uploads\Slider\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
