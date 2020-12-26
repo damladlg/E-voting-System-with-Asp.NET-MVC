@@ -108,6 +108,7 @@ img.img-polaroid {
 
 header .navbar {
     margin-bottom: 0;
+    
 }
 
 .navbar-default {
@@ -117,7 +118,7 @@ header .navbar {
 .navbar-brand {
     color: #222;
 	text-transform: uppercase;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1em;
 	letter-spacing: -1px;
@@ -133,6 +134,7 @@ header .navbar-collapse  ul.navbar-nav {
 
 header .navbar-default{
     background-color: #fff;
+
 }
 
 header .nav li a:hover,
@@ -164,6 +166,7 @@ header .navbar-default .navbar-nav > .open > a:focus {
 
 header .navbar {
     min-height: 100px;
+    background-color:#d6d1c6
 }
 
 header .navbar-nav > li  {

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<E_voting.Models.Model.Candidate>
+@{
+    ViewBag.Title = "VoteNow";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <section id="projects">
+                        <ul id="thumbs" class="portfolio">
+                            <!-- Item Project and Filter Name -->
+
+                            @foreach (var item in Model)
+                            {
+                            <li class="item-thumbs col-lg-2 design" data-id="id-0" data-type="web">
+
+                                <img src="@item.PhotoPath" alt="@item.City">
+                                <p></p>
+                                <p><b>@item.Name</b></p>
+                                <p>@item.City</p>
+                                <form class="login-form" action="index.html">
+                                    <div class="login-wrap">
+                                        <p class="login-img"><i class="icon_lock_alt"></i></p>
+                                        @*<div class="input-group">
+                                            <span class="input-group-addon"><i class="icon_profile"></i></span>
+                                            <input type="text" class="form-control" name="@item.Name" autofocus>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                                            <input type="password" class="form-control" placeholder="Password">
+                                        </div>*@
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="remember-me"> Vote it
+                                        </label>
+                                        @*<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                        <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>*@
+                                    </div>
+                                </form>
+                            </li>
+                            }
+
+
+                            <!-- End Item Project -->
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

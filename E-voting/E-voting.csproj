@@ -763,6 +763,13 @@
     <Content Include="Content\SiteLayout\css\style.css" />
     <Content Include="Content\SiteLayout\fonts\customicon\Icons.svg" />
     <Content Include="Content\SiteLayout\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SiteLayout\img\Aday1.png" />
+    <Content Include="Content\SiteLayout\img\Aday2.png" />
+    <Content Include="Content\SiteLayout\img\Aday3.png" />
+    <Content Include="Content\SiteLayout\img\Aday4.png" />
+    <Content Include="Content\SiteLayout\img\Aday5.png" />
+    <Content Include="Content\SiteLayout\img\Aday6.png" />
+    <Content Include="Content\SiteLayout\img\Aday7.png" />
     <Content Include="Content\SiteLayout\img\avatar.png" />
     <Content Include="Content\SiteLayout\img\bg_direction_nav.png" />
     <Content Include="Content\SiteLayout\img\dummies\blog\65x65\thumb1.jpg" />
@@ -775,9 +782,11 @@
     <Content Include="Content\SiteLayout\img\glyphicons-halflings-white.png" />
     <Content Include="Content\SiteLayout\img\glyphicons-halflings.png" />
     <Content Include="Content\SiteLayout\img\nivo-bullets.png" />
+    <Content Include="Content\SiteLayout\img\okicon.jpg" />
     <Content Include="Content\SiteLayout\img\slides\1.jpg" />
     <Content Include="Content\SiteLayout\img\slides\2.jpg" />
     <Content Include="Content\SiteLayout\img\slides\3.jpg" />
+    <Content Include="Content\SiteLayout\img\vote-icon.png" />
     <Content Include="Content\SiteLayout\img\works\1.jpg" />
     <Content Include="Content\SiteLayout\img\works\2.jpg" />
     <Content Include="Content\SiteLayout\img\works\3.jpg" />
@@ -1072,6 +1081,7 @@
     <Content Include="Views\Slider\Details.cshtml" />
     <Content Include="Views\Slider\Edit.cshtml" />
     <Content Include="Views\Slider\Index.cshtml" />
+    <Content Include="Views\Vote\VoteNow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
