@@ -1082,6 +1082,7 @@
     <Content Include="Views\Slider\Edit.cshtml" />
     <Content Include="Views\Slider\Index.cshtml" />
     <Content Include="Views\Vote\VoteNow.cshtml" />
+    <Content Include="Views\Vote\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

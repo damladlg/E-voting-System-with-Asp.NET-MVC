@@ -22,6 +22,25 @@ namespace E_voting.Controllers
         {
             return View(db.Candidate.ToList().OrderByDescending(x => x.CandidateId));
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(Voter voter)
+        {
+            var login = db.Voter.Where(x => x.Email == voter.Email).SingleOrDefault();
+            if(login.Email==voter.Email && login.Password==voter.Password)
+            {
+                Session["voterid"] = login.VoterId;
+                Session["eposta"] = login.Email;
+                return RedirectToAction("Index", "Vote");
+            }
+            ViewBag.Uyari = "Wrong password or email.";
+            return View(voter);
+
+        }
     }
   
 }
