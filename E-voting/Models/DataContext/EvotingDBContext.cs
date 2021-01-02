@@ -21,5 +21,6 @@ namespace E_voting.Models.DataContext
         public DbSet<VoteCastingInfo> VoteCastingInfo { get; set; }
         public DbSet<Voter> Voter { get; set; }
         public DbSet<Slider> Slider { get; set; }
+        public DbSet<Result> Result { get; set; }
     }
 }

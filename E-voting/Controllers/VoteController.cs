@@ -41,6 +41,17 @@ namespace E_voting.Controllers
             return View(voter);
 
         }
+        public JsonResult ToVote(int pozisyon, int candidate, int voter)
+        {
+            //if (candidate)
+            //{
+            //    return Json(true, JsonRequestBehavior.AllowGet);
+            //}
+            db.Result.Add(new Result { PositionId = pozisyon, CandidateId = candidate, VoterId = voter });
+            db.SaveChanges();
+
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
     }
   
 }

@@ -1032,6 +1032,7 @@
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\CandidatePositionController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\VoteCastingInfoController.cs" />
     <Compile Include="Controllers\VoteController.cs" />
@@ -1045,6 +1046,7 @@
     <Compile Include="Models\Model\Candidate.cs" />
     <Compile Include="Models\Model\CandidatePosition.cs" />
     <Compile Include="Models\Model\Position.cs" />
+    <Compile Include="Models\Model\Result.cs" />
     <Compile Include="Models\Model\Slider.cs" />
     <Compile Include="Models\Model\VoteCastingInfo.cs" />
     <Compile Include="Models\Model\Voter.cs" />
@@ -1083,6 +1085,7 @@
     <Content Include="Views\Slider\Index.cshtml" />
     <Content Include="Views\Vote\VoteNow.cshtml" />
     <Content Include="Views\Vote\Login.cshtml" />
+    <Content Include="Views\Result\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

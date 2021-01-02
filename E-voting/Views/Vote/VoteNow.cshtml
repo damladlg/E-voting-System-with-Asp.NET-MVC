@@ -16,24 +16,24 @@
 
                             @foreach (var item in Model)
                             {
-                             <li class="item-thumbs col-lg-2 design" data-id="id-0" data-type="web">
+                                <li class="item-thumbs col-lg-2 design" data-id="id-0" data-type="web">
 
-                                <img src="@item.PhotoPath" alt="@item.City">
-                                <p></p>
-                                <p><b>@item.Name</b></p>
-                                <p>@item.City</p>
-                                <form class="login-form" action="index.html">
-                                    <div class="login-wrap">
-                                        <p class="login-img"><i class="icon_lock_alt"></i></p>
-         
-                                        <label class="checkbox">
-                                            <input type="checkbox" value="remember-me"> Vote it
-                                        </label>
-                                        @*<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-                                        <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>*@
-                                    </div>
-                                </form>
-                              </li>
+                                    <img src="@item.PhotoPath" alt="@item.City">
+                                    <p></p>
+                                    <p>@item.CandidateId</p>
+                                    <p><b>@item.Name</b></p>
+                                    <p>@item.City</p>
+
+
+
+                                    <form class="login-form" action="index.html">
+                                        <div class="login-wrap">
+                                            <p class="login-img"><i class="icon_lock_alt"></i></p>
+
+
+                                        </div>
+                                    </form>
+                                </li>
                             }
 
 
@@ -42,7 +42,54 @@
                     </section>
                 </div>
             </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Vote it</h3>
+                <form>
+                    <div>
+                        <input type="text" id="voteid" placeholder="Enter ID" required class="form-control" />
+                        <br />
+                        <input type="text" id="candidateid" placeholder="Please enter id of candidate you selected " required class="form-control" />
+
+                        <br />
+                        <input type="text" id="posid" placeholder="Enter ID" required class="form-control" />
+                        <br />
+
+                        <br />
+                        <button type="submit" class="btn btn-success" id="Save">SEND</button>
+
+                    </div>
+                </form>
+
+
+            </div>
         </div>
     </div>
+
+    
 </section>
+
+<script src="~/Content/SiteLayout/js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#Save").click(function () {
+            var vote = $("#voteid").val();
+            var candi = $("#candidateid").val();
+            var pos = $("#posid").val();
+            $.ajax({
+                url: '/Vote/ToVote/',
+                data: { pozisyon: pos, candidate: candi, voter:vote },
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    alert("Oyunuz alındı. Teşekkürler.");
+                }
+            });
+        });
+    })
+
+</script>
 
