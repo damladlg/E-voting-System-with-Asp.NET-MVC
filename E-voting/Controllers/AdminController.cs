@@ -15,6 +15,11 @@ namespace E_voting.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewBag.VoterCount = db.Voter.Count();
+            ViewBag.ResultCount = db.Result.Count();
+            ViewBag.PositionCount = db.Position.Count();
+            ViewBag.CandidateCount = db.Candidate.Count();
+            //ViewBag.VoterCount=db.Voter.Where(x=>x.VoterId).cou
             var sorgu = db.Voter.ToList();
             return View(sorgu);
         }
