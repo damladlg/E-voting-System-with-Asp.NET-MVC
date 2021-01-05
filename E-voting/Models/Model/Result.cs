@@ -13,8 +13,6 @@ namespace E_voting.Models.Model
         [Key]
         public int VoteCastingId { get; set; }
 
-        public int PositionId { get; set; }
-
         public int CandidateId { get; set; }
 
         public int VoterId { get; set; }

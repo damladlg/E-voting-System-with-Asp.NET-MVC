@@ -20,7 +20,7 @@
 
                                     <img src="@item.PhotoPath" alt="@item.City">
                                     <p></p>
-                                    <p>@item.CandidateId</p>
+                                    <p> <b> Candidate ID:</b> @item.CandidateId</p>
                                     <p><b>@item.Name</b></p>
                                     <p>@item.City</p>
 
@@ -49,13 +49,9 @@
                 <h3>Vote it</h3>
                 <form>
                     <div>
-                        <input type="text" id="voteid" placeholder="Enter ID" required class="form-control" />
+                        <input type="text" id="voteid" placeholder="Your Voter ID" required class="form-control" />
                         <br />
-                        <input type="text" id="candidateid" placeholder="Please enter id of candidate you selected " required class="form-control" />
-
-                        <br />
-                        <input type="text" id="posid" placeholder="Enter ID" required class="form-control" />
-                        <br />
+                        <input type="text" id="candidateid" placeholder="Candidate ID You Selected " required class="form-control" />
 
                         <br />
                         <button type="submit" class="btn btn-success" id="Save">SEND</button>
@@ -78,10 +74,9 @@
         $("#Save").click(function () {
             var vote = $("#voteid").val();
             var candi = $("#candidateid").val();
-            var pos = $("#posid").val();
             $.ajax({
                 url: '/Vote/ToVote/',
-                data: { pozisyon: pos, candidate: candi, voter:vote },
+                data: {candidate: candi, voter:vote },
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
