@@ -1079,6 +1079,9 @@
     <Content Include="Views\Vote\VoteNow.cshtml" />
     <Content Include="Views\Vote\Login.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
+    <Content Include="Views\Admin\Admins.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

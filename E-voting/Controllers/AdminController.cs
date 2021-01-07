@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace E_voting.Controllers
@@ -31,7 +32,7 @@ namespace E_voting.Controllers
         public ActionResult Login(Admin admin)
         {
             var login = db.Admin.Where(x => x.Email == admin.Email).SingleOrDefault();
-            if ((login.Email == admin.Email) && (login.Password == admin.Password))
+            if ((login.Email == admin.Email) && (login.Password == Crypto.Hash(admin.Password, "MD5")))
             {
                 Session["adminid"] = login.AdminId;
                 Session["email"] = login.Email;
@@ -47,5 +48,56 @@ namespace E_voting.Controllers
             Session.Abandon();
             return RedirectToAction("Login", "Admin");
         }
+        public ActionResult Admins()
+        {
+            return View(db.Admin.ToList());
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Admin admin,string password,string email)
+        {
+            if(ModelState.IsValid)
+            {
+                admin.Password = Crypto.Hash(password,"MD5");
+                db.Admin.Add(admin);
+                db.SaveChanges();
+                return RedirectToAction("Admins");
+            }
+            return View(admin);
+        }
+        public ActionResult Edit(int id)
+        {
+            var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+            return View(a);
+        }
+        [HttpPost]
+        public ActionResult Edit(int id,Admin admin,string password, string email)
+        {
+            
+            if(ModelState.IsValid)
+            {
+                var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+                a.Password = Crypto.Hash(password, "MD5");
+                a.Email = admin.Email;
+                db.SaveChanges();
+                return RedirectToAction("Admins");
+            }
+            return View(admin);
+        }
+        public ActionResult Delete(int id)
+        {
+            var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
+            if(a!=null)
+            {
+                db.Admin.Remove(a);
+                db.SaveChanges();
+                return RedirectToAction("Admins");
+            }
+            return View();
+        }
     }
+
 }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using E_voting.Models.DataContext;
 using E_voting.Models.Model;
@@ -47,10 +48,11 @@ namespace E_voting.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VoterId,Name,TC,MobileNo,Email,Password,City")] Voter voter)
+        public ActionResult Create(string password,[Bind(Include = "VoterId,Name,TC,MobileNo,Email,Password,City")] Voter voter)
         {
             if (ModelState.IsValid)
             {
+                voter.Password = Crypto.Hash(password, "MD5");
                 db.Voter.Add(voter);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -74,15 +76,17 @@ namespace E_voting.Controllers
             return View(voter);
         }
 
+
         // POST: Voter/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VoterId,Name,TC,MobileNo,Email,Password,City")] Voter voter)
+        public ActionResult Edit(string password,[Bind(Include = "VoterId,Name,TC,MobileNo,Email,Password,City")] Voter voter)
         {
             if (ModelState.IsValid)
             {
+                voter.Password = Crypto.Hash(password, "MD5");
                 db.Entry(voter).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

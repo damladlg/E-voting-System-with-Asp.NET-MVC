@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace E_voting.Controllers
@@ -31,7 +32,7 @@ namespace E_voting.Controllers
         public ActionResult Login(Voter voter)
         {
             var login = db.Voter.Where(x => x.Email == voter.Email).SingleOrDefault();
-            if(login.Email==voter.Email && login.Password==voter.Password)
+            if(login.Email==voter.Email && login.Password== Crypto.Hash(voter.Password, "MD5"))
             {
                 Session["voterid"] = login.VoterId;
                 Session["eposta"] = login.Email;
