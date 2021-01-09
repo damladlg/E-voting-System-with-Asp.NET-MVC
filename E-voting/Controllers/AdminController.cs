@@ -75,8 +75,7 @@ namespace E_voting.Controllers
         }
         [HttpPost]
         public ActionResult Edit(int id,Admin admin,string password, string email)
-        {
-            
+        {            
             if(ModelState.IsValid)
             {
                 var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
@@ -99,5 +98,4 @@ namespace E_voting.Controllers
             return View();
         }
     }
-
 }

@@ -5,11 +5,18 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@*@model IEnumerable<KurumsalWeb.Models.Model.Kategori>
+    <ul class="cat">
+        @foreach (var item in Model)
+        {
+            <li><i class="icon-angle-right"></i><a href="/BlogPost/@item.KategoriId">@item.KategoriAd</a><span> (@item.Blogs.Count())</span></li>
+        }
+    </ul>*@
 
+<div class="row">
+    @ViewBag.Message
+</div>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table">
     <tr>
         <th>
@@ -21,20 +28,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CandidateId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VoterId)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VoteCastingId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VoteCastingId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VoteCastingId })
-        </td>*@
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CandidateId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoterId)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.VoteCastingId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.VoteCastingId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.VoteCastingId })
+                </td>*@
+        </tr>
+    }
 
 </table>
