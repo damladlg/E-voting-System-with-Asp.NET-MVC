@@ -16,7 +16,7 @@ namespace E_voting.Controllers
             Dictionary<string, int> counts = new Dictionary<string, int>();
             foreach (var item in db.Result.ToList())
             {
-                int id = item.CandidateId;
+                string id = item.CandidateId;
                 KeyValuePair<string, int> temp = new KeyValuePair<string, int>(id.ToString(), 1);
                 if (counts.ContainsKey(id.ToString()))
                 {
