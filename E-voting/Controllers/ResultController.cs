@@ -22,6 +22,8 @@ namespace E_voting.Controllers
                 {
                     int index = Array.IndexOf(counts.Keys.ToArray(), id.ToString());
 
+
+
                     counts[id.ToString()] = counts[id.ToString()] + 1;
                 }
                 else
@@ -37,8 +39,18 @@ namespace E_voting.Controllers
                     break;
                 }
             }
-
-            ViewBag.Message = "WINNER'S ID: "+ tempkey + " VOTE NUMBER OF THE WINNING CANDIDATE: " + tempmax.ToString();
+            string tempname = "a";
+            foreach (var item in db.Candidate)
+            {
+                if (item.CandidateId.ToString() == tempkey)
+                {
+                    tempname = item.Name;
+                    break;
+                }
+            }
+            ViewBag.winnerid = tempkey;
+            ViewBag.number = tempname;
+            ViewBag.winnercount = tempmax.ToString();
             return View(db.Result.ToList());
         }
 
