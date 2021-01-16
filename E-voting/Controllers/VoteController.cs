@@ -16,6 +16,8 @@ namespace E_voting.Controllers
     {
         EvotingDBContext db = new EvotingDBContext();
         // GET: Vote
+        [Route("")]
+        [Route("Vote/Home")]
         public ActionResult Index()
         {
             // ViewBag.Candidate = db.Candidate.ToList().OrderByDescending(x => x.CandidateId);
