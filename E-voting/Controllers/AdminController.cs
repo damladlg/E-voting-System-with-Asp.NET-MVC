@@ -32,12 +32,17 @@ namespace E_voting.Controllers
         public ActionResult Login(Admin admin)
         {
             var login = db.Admin.Where(x => x.Email == admin.Email).SingleOrDefault();
-            if ((login.Email == admin.Email) && (login.Password == Crypto.Hash(admin.Password, "MD5")))
+            if ((null == admin.Email))
+            {
+                ViewBag.Uyari = "Wrong password or name";
+            }
+            else if ((login.Email == admin.Email) && (login.Password == Crypto.Hash(admin.Password, "MD5")))
             {
                 Session["adminid"] = login.AdminId;
                 Session["email"] = login.Email;
                 return RedirectToAction("Index", "Admin");
             }
+
             ViewBag.Uyari = "Wrong password or name";
             return View(admin);
         }
