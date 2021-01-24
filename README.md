@@ -5,7 +5,7 @@ Most of the e-voting technologies found in the literature are based on cryptogra
 these methods have different structures to suit different needs and characteristics. In this study, a web-based e-voting system has been developed that meets security requirements
 by using various encryption algorithms.
 
-![System] (C:\Users\damla\OneDrive\Masaüstü\System.png)
+![System] (System.png)
 
 **METHODOLOGY**
 
@@ -14,10 +14,9 @@ by using various encryption algorithms.
 - Voters' passwords used in system login are encrypted with Crypto Helpers and MD5 encryption helps encryption. The votes used were recorded in the database with the RSA encryption algorithm.
 - Voter information, candidate information, ballot papers, election results are stored in a relational database.
 
-![System] (C:\Users\damla\OneDrive\Masaüstü\System.png)
 
-![System] (C:\Users\damla\OneDrive\Masaüstü\Admin.png)
+![Admin] (Admin.png)
 
-![System] (C:\Users\damla\OneDrive\Masaüstü\VoteScreen.png)
+![VoteScreen] (VoteScreen.png)
 
-![System] (C:\Users\damla\OneDrive\Masaüstü\Results.png)
+![Results] (Results.png)
