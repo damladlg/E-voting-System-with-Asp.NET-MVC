@@ -5,7 +5,8 @@ Most of the e-voting technologies found in the literature are based on cryptogra
 these methods have different structures to suit different needs and characteristics. In this study, a web-based e-voting system has been developed that meets security requirements
 by using various encryption algorithms.
 
-![System] (System.png)
+![System] (https://user-images.githubusercontent.com/53597482/105843186-6ff04200-5fe8-11eb-9028-4afa1e59296e.png)
+
 
 **METHODOLOGY**
 
