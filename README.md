@@ -15,9 +15,16 @@ by using various encryption algorithms.
 - Voters' passwords used in system login are encrypted with Crypto Helpers and MD5 encryption helps encryption. The votes used were recorded in the database with the RSA encryption algorithm.
 - Voter information, candidate information, ballot papers, election results are stored in a relational database.
 
+- System Screenshots:
 
 ![Admin](images/Admin.png)
 
 ![VoteScreen](images/VoteScreen.png)
 
 ![Results](images/Results.png)
+
+- Encrypted data in MsSQL Tables:
+
+![admintable](images/admintable.png)
+
+![VoteScreen](images/result.png)
